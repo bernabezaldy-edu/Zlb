@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,312 +8,216 @@
 <title>Zaldy L. Bernabe - BSME | Senior Commissioning Engineer</title>
 <style>
 :root {
-  --primary: #007bff;
-  --primary-dark: #0056b3;
-  --navy: #004080;
-  --green: #28a745;
-  --bg-dark: #0a1128;
-  --bg-card: #ffffff;
+  --primary: #004080;
+  --primary-mid: #0056b3;
+  --accent-blue: #007bff;
+  --accent-green: #28a745;
+  --text: #333;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+* { box-sizing: border-box; }
 
 body {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background: #f0f2f5;
-  overflow-x: hidden;
-}
-
-/* ===== STICKY NAV ===== */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(10, 17, 40, 0.95);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-  padding: 12px 0;
-}
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f0f2f5 0%, #e0e5ec 100%);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  flex-wrap: wrap;
-}
-.nav-logo {
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-}
-.nav-logo span { color: #4dabff; }
-.nav-links {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
   justify-content: center;
-}
-.nav-links a {
-  color: #cfd8e3;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: all 0.25s ease;
-}
-.nav-links a:hover {
-  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
-  color: #fff;
-  transform: translateY(-2px);
-}
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-/* ===== HERO ===== */
-.hero {
-  position: relative;
+  align-items: flex-start;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  padding: 100px 20px 60px;
-  background: linear-gradient(135deg, #0a1128 0%, #001f4d 50%, #003d80 100%);
-  overflow: hidden;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(0,123,255,0.25), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(40,167,69,0.2), transparent 40%);
-  animation: float 12s ease-in-out infinite alternate;
-}
-@keyframes float {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-30px) scale(1.1); }
-}
-.hero-content { position: relative; z-index: 2; max-width: 900px; animation: fadeUp 1s ease; }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero .badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 8px 18px;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  margin-bottom: 25px;
-  backdrop-filter: blur(6px);
-}
-.hero h1 {
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  font-weight: 800;
-  line-height: 1.1;
-  background: linear-gradient(90deg, #fff, #7cc2ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 18px;
-}
-.hero .subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  color: #b9c9dc;
-  font-weight: 400;
-  max-width: 760px;
-  margin: 0 auto 20px;
-  line-height: 1.5;
-}
-.hero .location {
-  color: #8fa5bf;
-  font-size: 0.95rem;
-  margin-bottom: 35px;
-}
-.hero .location a { color: #7cc2ff; text-decoration: none; }
-
-/* Hero stat chips */
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-.stat { text-align: center; }
-.stat .num { font-size: 2rem; font-weight: 800; color: #4dabff; }
-.stat .label { font-size: 0.8rem; color: #9db3cc; letter-spacing: 1px; }
-
-/* Hero CTA buttons */
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-}
-.hero-cta a {
-  padding: 12px 22px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  border: 2px solid rgba(255,255,255,0.3);
-  color: #fff;
-  background: rgba(255,255,255,0.06);
-}
-.hero-cta a:hover {
-  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
-  border-color: transparent;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,123,255,0.4);
-}
-.hero-cta a.primary {
-  background: linear-gradient(45deg, var(--green), #1c7c34);
-  border-color: transparent;
 }
 
-/* ===== SECTIONS ===== */
-.section {
+.container {
   max-width: 960px;
-  margin: 0 auto;
-  padding: 70px 20px 20px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  width: 100%;
 }
-.card {
-  background: var(--bg-card);
-  border-radius: 18px;
-  padding: 35px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-  border: 1px solid #eef1f5;
-}
-h3 {
-  color: var(--navy);
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-  position: relative;
-  padding-bottom: 12px;
-  display: inline-block;
-}
-h3::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 60%;
-  height: 4px;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--green), var(--primary));
-}
-p { margin-bottom: 16px; font-size: 1.05rem; }
-.highlight { font-weight: 700; color: var(--primary); }
 
-/* Skills grid */
+/* Typography */
+h1 { color: var(--primary); text-align: center; margin-bottom: 10px; font-size: 3rem; line-height: 1.1; }
+.tagline-title { color: var(--primary-mid); text-align: center; margin: 0 0 20px; font-size: 1.35rem; font-weight: 400; line-height: 1.4; }
+h2 { color: var(--accent-green); border-bottom: 3px solid var(--accent-green); padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px; font-size: 1.4rem; font-weight: 700; }
+p { margin-bottom: 16px; font-size: 1.05rem; }
+
+.highlight { font-weight: bold; color: var(--accent-blue); }
+
+/* Contact & Button */
+.contact-info { text-align: center; margin-bottom: 25px; font-size: 1.05rem; }
+.contact-info a { color: var(--accent-blue); text-decoration: none; }
+.contact-info a:hover, .contact-info a:focus { text-decoration: underline; }
+
+.cta-button-wrapper { text-align: center; margin: 30px 0; }
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--accent-blue), var(--primary-mid));
+  color: white;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(45deg, var(--primary-mid), #003d80);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 91, 179, 0.35);
+  outline: none;
+}
+.btn-primary:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+/* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 .skill-category {
-  background: linear-gradient(135deg, #f8faff, #eef5ff);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #dbeafe;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8faff;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #cceeff;
 }
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,86,179,0.15);
-}
-.skill-category strong { color: var(--primary-dark); display: block; margin-bottom: 8px; font-size: 1.05rem; }
+.skill-category strong { color: var(--primary-mid); display: block; margin-bottom: 6px; }
 
 /* Experience */
 .experience-item {
-  border-left: 5px solid var(--primary);
-  padding: 20px;
-  margin-bottom: 22px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  border-left: 5px solid var(--accent-blue);
+  padding: 18px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 8px;
 }
-.experience-item:hover { transform: translateX(6px); }
-.experience-item .role { font-weight: 700; color: var(--navy); font-size: 1.15rem; }
-.experience-item .company { color: var(--primary-dark); font-weight: 600; }
-.experience-item .period { color: #777; font-style: italic; font-size: 0.9rem; }
+.experience-item .role { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+.experience-item .company { color: var(--primary-mid); }
+.experience-item .period { color: #666; font-style: italic; font-size: 0.95rem; }
 .experience-item ul { margin: 12px 0 0; padding-left: 20px; }
 .experience-item li { margin-bottom: 8px; }
 
 /* Lists */
-.achievements-list, .education-list, .memberships-list { list-style: none; }
+.achievements-list, .education-list, .memberships-list {
+  list-style: none;
+  padding: 0;
+}
 .achievements-list li, .education-list li, .memberships-list li {
-  padding: 16px 18px;
-  margin-bottom: 12px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #e6f7ea, #f0fff4);
-  border-left: 5px solid var(--green);
-  transition: transform 0.3s ease;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #e6f7ea;
+  border-left: 5px solid var(--accent-green);
 }
-.achievements-list li:hover, .education-list li:hover, .memberships-list li:hover {
-  transform: translateX(6px);
-}
-
-/* Contact */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  margin-top: 10px;
-}
-.contact-card {
-  background: linear-gradient(135deg, #001f4d, #003d80);
-  color: #fff;
-  padding: 25px;
-  border-radius: 14px;
-  text-align: center;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.contact-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,63,128,0.4); }
-.contact-card .ico { font-size: 1.8rem; margin-bottom: 8px; }
-.contact-card .txt { font-size: 0.95rem; word-break: break-word; }
 
 /* Footer */
-.footer {
-  text-align: center;
-  margin-top: 40px;
-  padding: 40px 20px;
-  background: var(--bg-dark);
-  color: #b9c9dc;
-}
-.footer a { color: #7cc2ff; text-decoration: none; }
-.footer .tagline { font-style: italic; color: #8fa5bf; font-size: 0.95rem; max-width: 600px; margin: 12px auto; }
+.footer { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid #e0e0e0; }
+.footer a { color: var(--accent-blue); text-decoration: none; }
+.footer a:hover, .footer a:focus { text-decoration: underline; }
+.footer .tagline { font-style: italic; color: #555; font-size: 0.95rem; }
 
-/* Back to top */
-.back-top {
-  position: fixed;
-  bottom: 25px; right: 25px;
-  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
-  color: #fff;
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem;
-  text-decoration: none;
-  
+/* ========== MOBILE AUTOFIT ========== */
+@media (max-width: 768px) {
+  .container { margin: 10px; padding: 20px; border-radius: 12px; }
+  h1 { font-size: 2rem; }
+  .tagline-title { font-size: 1.05rem; margin-bottom: 18px; }
+  h2 { font-size: 1.2rem; margin-top: 30px; }
+  .skills-grid { grid-template-columns: 1fr; gap: 15px; }
+  .btn-primary { display: block; width: 100%; text-align: center; padding: 14px; font-size: 1rem; }
+  .contact-info a { display: inline-block; margin: 3px 0; }
+  .experience-item { padding: 15px; }
+  p, li { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .container { margin: 8px; padding: 16px; }
+  h1 { font-size: 1.6rem; }
+  .tagline-title { font-size: 0.95rem; }
+  .achievements-list li,
+  .education-list li,
+  .memberships-list li { padding: 12px; font-size: 0.95rem; }
+}
+
+/* ========== PRINT OPTIMIZATION ========== */
+@media print {
+  body {
+    background: #fff;
+    display: block;
+    color: #000;
+  }
+  .container {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+  .cta-button-wrapper { display: none; }
+  a { color: #000; text-decoration: none; }
+  /* Show URLs in print for reference */
+  .contact-info a[href^="http"]::after,
+  .footer a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8rem; }
+  h1 { font-size: 2rem; }
+  .tagline-title { font-size: 1rem; }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .experience-item,
+  .skill-category,
+  .achievements-list li,
+  .education-list li,
+  .memberships-list li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .skill-category { background: #fff; border: 1px solid #ccc; }
+  .achievements-list li, .education-list li, .memberships-list li { background: #fff; }
+}
+</style>
+</head>
+<body>
+<main class="container">
+
+  <!-- HEADER -->
+  <header>
+    <h1>ZALDY L. BERNABE, BSME</h1>
+    <p class="tagline-title">Senior Commissioning Engineer | MEP &amp; Project Management Professional | Oil &amp; Gas · HVAC · 21+ Yrs | PMP® Candidate | KOC &amp; ARAMCO Projects</p>
+
+    <p class="contact-info">
+      Ahmadi, Kuwait | <a href="tel:+96555064832">+965 55064832</a> |
+      <a href="mailto:bernabezaldy@gmail.com">bernabezaldy@gmail.com</a> |
+      <a href="https://linkedin.com/in/zaldybernabe-me" target="_blank" rel="noopener noreferrer">linkedin.com/in/zaldybernabe-me</a>
+    </p>
+
+    <div class="cta-button-wrapper">
+      <a href="https://linkedin.com/in/zaldybernabe-me" target="_blank" rel="noopener noreferrer" class="btn-primary">Connect on LinkedIn</a>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section aria-labelledby="summary-heading">
+    <h2 id="summary-heading">Professional Summary</h2>
+    <p>Senior Mechanical Engineer and MEP Commissioning specialist with <strong>21+ years</strong> of total engineering experience — including <strong>18+ years international</strong> across Kuwait, Saudi Arabia, and Iraq, plus 3 years of foundational experience in the Philippines. Proven track record supporting <span class="highlight">Kuwait Oil Company (KOC)</span> and major EPC contractors in HVAC systems, commissioning, QA/QC, project controls, and materials reliability. Skilled in pre-commissioning, TAB, handover documentation, and multidisciplinary site coordination, aligned with KOC and international standards. A consistent performer in demanding, multicultural, safety-critical environments. Currently pursuing <span class="highlight">PMP® certification</span>, targeting senior leadership roles in project management, commissioning, and facilities operations.</p>
+  </section>
+
+  <!-- CORE SKILLS -->
+  <section aria-labelledby="skills-heading">
+    <h2 id="skills-heading">Core Skills &amp; Technical Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-category"><strong>Project &amp; Construction Support</strong>MEP Coordination (HVAC, Plumbing, Firefighting, Piping, Electrical), Primavera P6, MS Project, Scheduling, Cost Control, Oil &amp; Gas Facilities</div>
+      <div class="skill-category"><strong>HVAC &amp; Commissioning</strong>HVAC Design, Chiller Plants, Equipment Selection, System Integration, Pre-Commissioning, TAB, Troubleshooting, Performance Optimization</div>
+      <div class="skill-category"><strong>Controls &amp; Automation</strong>BMS, PLC Troubleshooting, System Integration</div>
+      <div class="skill-category"><strong>Procurement &amp; Materials Reliability</strong>SAP, eBEAMS, Vendor Management, Technical Evaluation, Material Submittals, Logistics Coordination</div>
+      <div class="skill-category"><strong>QA/QC &amp; Compliance</strong>Inspection, Documentation, Reliability Engineering, Maintenance Readiness, ISO, ASME, ASTM, NFPA, KOC &amp; Aramco Standards</div>
+      <div class="skill-category"><strong>Digital Tools</strong>AutoCAD 2D/3D
